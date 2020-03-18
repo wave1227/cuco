@@ -1,0 +1,33 @@
+exports.run = async (client, message, args) => {
+    var util = require("../fivem");
+    message.delete();
+    let embed = new Discord.RichEmbed()
+    .setAuthor(state, icon)
+    .setColor(color)
+    .setDescription(`**FiveM Bot Help**`)
+    .addField(`Featured Servers`, " Roleplay - *ip* /  Discord- https://discord.gg/UWefVSw ")
+    .addBlankField(true)
+    .addField(`${config.prefix}set <serverIP:port>`, "Define o servidor FiveM da guild atual")
+    .addField(`${config.prefix}players`, "Obtém a lista de jogadores atual do servidor")
+    .addField(`${config.prefix}server`, "Obtém todas as informações do servidor")
+    .addField(`${config.prefix}find <username>`, "Localiza um usuário que está no servidor via Nome de usuário")
+    .addField(`${config.prefix}id <id>`, "Localiza um usuário que está no servidor via Server ID")
+    .addField(`${config.prefix}get-log`, "Para obter os logs do servidor" )
+    .addField(`${config.prefix}status`, "Verifica se o servidor está online")
+    .addField(`${config.prefix}stats`, "Verifica as estatísticas do bot")
+    .addField(`${config.prefix}rcon help`, "Sends RCON help embed")
+    .addField(`${config.prefix}rcon set <rcon_password>`, "Define o servidor rcon da guild")
+    .addField(`${config.prefix}rcon <rcon_command>`, "Executa um (Comando RCON) (https://docs.fivem.net/server-manual/server-commands/)")
+    .addBlankField(true)
+    .setThumbnail(icon)
+    .setTitle("Support Discord")
+    .setURL("https://discord.gg/UWefVSw")
+    .addBlankField(true)
+    .addField("Donate to FiveM Bot's Hosting", "[Donate](https://paypal.me/wave1227)")
+    .addBlankField(true)
+    .addField("News", news)
+    .setFooter("Copyright © wave1337 - https://github.com/wave1227", icon)
+    log(`Fivem help cmd was used.. in ${message.guild.name}`)
+  
+    message.channel.send({embed: embed})
+};
